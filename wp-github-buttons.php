@@ -3,9 +3,9 @@
     Plugin Name:    WP GitHub Buttons
     Plugin URI:     http://en.michaeluno.jp/wp-github-buttons
     Description:    Displays GitHub buttons.
-    Author:         Michael Uno
+    Author:         miunosoft (Michael Uno)
     Author URI:     http://michaeluno.jp
-    Version:        1.0.0b01
+    Version:        1.0.0
 */
 
 /**
@@ -15,7 +15,7 @@
  */
 class WPGitHubButtons_Registry_Base {
 
-    const VERSION        = '1.0.0b01'; // <--- DON'T FORGET TO CHANGE THIS AS WELL!!
+    const VERSION        = '1.0.0'; // <--- DON'T FORGET TO CHANGE THIS AS WELL!!
     const NAME           = 'WP GitHub Buttons'; // the full name.
     const SHORT_NAME     = 'WP GitHub Buttons'; // used for a menu title etc.
     const DESCRIPTION    = 'Displays buttons with the style used in the WordPress administration area.';
