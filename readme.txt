@@ -62,8 +62,8 @@ Displays GitHub buttons with your proffered octicon.
 
 == Screenshots ==
 
-1. ***Widget Form***
-2. ***Front-end***
+1. ***Buttons***
+2. ***Widget Form***
 
 == Changelog ==
 
