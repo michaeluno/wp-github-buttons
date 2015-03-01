@@ -5,7 +5,7 @@
     Description:    Displays GitHub buttons.
     Author:         Michael Uno
     Author URI:     http://michaeluno.jp
-    Version:        0.0.5
+    Version:        1.0.0b01
 */
 
 /**
@@ -15,7 +15,7 @@
  */
 class WPGitHubButtons_Registry_Base {
 
-    const VERSION        = '0.0.5'; // <--- DON'T FORGET TO CHANGE THIS AS WELL!!
+    const VERSION        = '1.0.0b01'; // <--- DON'T FORGET TO CHANGE THIS AS WELL!!
     const NAME           = 'WP GitHub Buttons'; // the full name.
     const SHORT_NAME     = 'WP GitHub Buttons'; // used for a menu title etc.
     const DESCRIPTION    = 'Displays buttons with the style used in the WordPress administration area.';
@@ -139,7 +139,7 @@ final class WPGitHubButtons_Registry extends WPGitHubButtons_Registry_Base {
      * Used shortcode slugs
      */
     static public $sShortcodes = array(
-        'main'  => 'github_button',    
+        'main'  => 'wp_github_button',    
     );
        
     /**
@@ -214,7 +214,7 @@ final class WPGitHubButtons_Registry extends WPGitHubButtons_Registry_Base {
 WPGitHubButtons_Registry::setUp( __FILE__ );
 
 // Run the bootstrap script.    
-include( dirname( __FILE__ ).'/include/library/admin-page-framework/wp-github-buttons-admin-page-framework.min.php' );
+include( dirname( __FILE__ ).'/include/library/admin-page-framework/admin-page-framework.php' );
 include( dirname( __FILE__ ).'/include/class/boot/WPGitHubButtons_Bootstrap.php' );
 new WPGitHubButtons_Bootstrap(
     WPGitHubButtons_Registry::$sFilePath,

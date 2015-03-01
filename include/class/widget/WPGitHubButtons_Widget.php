@@ -28,7 +28,9 @@ class WPGitHubButtons_Widget extends WPGitHubButtons_AdminPageFramework_Widget {
      */
     public function setUp() {
         
-        new WPGitHubButtons_RevealerCustomFieldType( get_class( $this ) );
+        $_sClassName = get_class( $this );
+        new WPGitHubButtons_MultiTextCustomFieldType( $_sClassName );        
+        new WPGitHubButtons_RevealerCustomFieldType( $_sClassName );
         
         $this->setArguments( 
             array(
@@ -101,14 +103,23 @@ class WPGitHubButtons_Widget extends WPGitHubButtons_AdminPageFramework_Widget {
                     // 'small'        => __( 'Small', 'wp-github-buttons' ),
                 ),
                 'default'       => 'default',
-            )
+            ),
+            array(
+                'field_id'      => 'custom_attributes',
+                'type'          => 'multi_text',
+                'title'         => __( 'Custom Attributes', 'wp-github-buttons' ),
+                'description'   => __( 'Set HTML attribute name-value pairs applied to the button element <code>div</code> tag.', 'wp-github-buttons' ),
+                'label'         => array(
+                    'attribute' => __( 'Attribute', 'wp-github-buttons' ),
+                    'value' => __( 'Value', 'wp-github-buttons' ),
+                ),
+                'repeatable'    => true,
+                'default'       => array(
+                    'attribute' => 'rel',
+                    'value'     => 'nofollow',
+                ),
+            )              
         );           
-        
-        
-        // $this->_addAttributeFields();
-        
-     
-
         
     }
         private function addGitHubFields() {
@@ -134,8 +145,8 @@ class WPGitHubButtons_Widget extends WPGitHubButtons_AdminPageFramework_Widget {
                     'title'         => __( 'GitHub Repository Name', 'wp-github-buttons' ),
                     'description'   => sprintf( 
                         __( 'For example, <code>%1$s</code> in <code>%2$s</code>', 'wp-github-butotns' ),
-                        'wp-wp-github-buttons',
-                        'https://github.com/michaeluno/wp-wp-github-buttons'
+                        'wp-github-buttons',
+                        'https://github.com/michaeluno/wp-github-buttons'
                     ),
                     'class'         => array(
                         'fieldrow' => 'fork follow star issue'
@@ -168,42 +179,6 @@ class WPGitHubButtons_Widget extends WPGitHubButtons_AdminPageFramework_Widget {
                 array()
             );
         }    
-        /**
-         * Adds fields for attributes
-         */
-       /*  private function _addAttributeFields() {    
-            
-            $this->addSettingFields(
-                array(
-                    'field_id'      => 'href',
-                    'type'          => 'text',
-                    'title'         => __( 'Link URL', 'wp-github-buttons' ),
-                ),
-                array(
-                    'field_id'      => 'title_attribute',
-                    'type'          => 'text',
-                    'title'         => __( 'Title Attribute', 'wp-github-buttons' )
-                        . ' (' . __( 'optional', 'wp-github-buttons' ) . ')',
-                    'description'   => __( 'The text that appeaser on mouse hover.', 'wp-github-buttons' ),
-                ),
-                array(
-                    'field_id'      => 'rel',
-                    'type'          => 'text',
-                    'title'         => __( 'Rel Attribute', 'wp-github-buttons' )
-                        . ' (' . __( 'optional', 'wp-github-buttons' ) . ')',
-                    'description'   => 'e.g. <code>nofollow</code>',
-                ),            
-                array(
-                    'field_id'      => 'target',
-                    'type'          => 'text',
-                    'title'         => __( 'Target Attribute', 'wp-github-buttons' )
-                        . ' (' . __( 'optional', 'wp-github-buttons' ) . ')',
-                    'description'   => 'e.g. <code>_blank</code>',
-                )                     
-        
-            );          
-        
-        } */
    
     
     /**
