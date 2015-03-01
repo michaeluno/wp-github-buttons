@@ -18,7 +18,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 The plugin incorporates work covered by the following copyright:
 
 github-buttons
-Copyright (c) 2014, なつき
+Copyright (c) 2015, なつき
 All rights reserved.
 Licensed The BSD 2-Clause License
 <https://github.com/ntkme/github-buttons>
